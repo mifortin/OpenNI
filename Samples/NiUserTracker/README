@@ -1,0 +1,10 @@
+XCode has trouble linking to items within /usr/lib.  This copies the
+OpenNI library into a place that XCode will look for:
+
+sudo cp /usr/lib/libOpenNI.dylib /Developer/usr/lib/
+
+Then build Release (or Debug) for i386 or x64 and enjoy!
+
+If it complains about a file not found, make sure that SamplesConfig.xml is in
+the same directory as the executable.  The XCode project is set up to pick
+the xml from the source directory.
